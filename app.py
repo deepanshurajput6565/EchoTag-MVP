@@ -20,7 +20,7 @@ if uploaded_file is not None:
             # Send the file to your FastAPI backend
             files = {"file": (uploaded_file.name, uploaded_file.getvalue(), uploaded_file.type)}
             try:
-                response = requests.post("https://echotag-api.onrender.com", files=files)
+                response = requests.post("https://echotag-api.onrender.com/api/scan-image", files=files)
                 data = response.json()
                 
                 # Handle the Response visually
